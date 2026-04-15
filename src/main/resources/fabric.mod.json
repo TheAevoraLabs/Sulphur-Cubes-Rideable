@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "rdsc",
+	"version": "${version}",
+	"name": "Rideable Sulfur Cube",
+	"description": "Tame, pet, and ride Sulfur Cubes while preserving their native archetype physics.",
+	"authors": [
+		"QuantumCreeper"
+	],
+	"contact": {
+		"homepage": "https://github.com/quantumcreeper/rideable-sulphur-cubes",
+		"sources": "https://github.com/quantumcreeper/rideable-sulphur-cubes"
+	},
+	"license": "MIT",
+	"icon": "assets/rdsc/icon.jpg",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"qc.aeonis.rsc.RideableSulphurCubes"
+		],
+		"client": [
+			"qc.aeonis.rsc.client.RideableSulphurCubesClient"
+		],
+		"fabric-datagen": [
+			"qc.aeonis.rsc.client.RideableSulphurCubesDataGenerator"
+		]
+	},
+	"mixins": [
+		"rideable-sulphur-cubes.mixins.json",
+		{
+			"config": "rideable-sulphur-cubes.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.1",
+		"minecraft": "~26.2-",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}
