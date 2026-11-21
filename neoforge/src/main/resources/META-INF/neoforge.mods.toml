@@ -1,0 +1,31 @@
+license="${mod_license}"
+issueTrackerURL="https://github.com/TheAevoraLabs/rideable-sulphur-cubes/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://aeonis.prenxy.app"
+logoFile="assets/rdsc/icon.png"
+authors="${mod_authors}"
+credits="QuantumCreeper, MrMK, Aevora Labs"
+description='''
+Tame, pet, and ride Sulfur Cubes while preserving their native archetype hopping physics.
+'''
+
+[[mixins]]
+config="rdsc-common.mixins.json"
+
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="[${neo_version},)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"

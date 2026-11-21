@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "rdsc",
+  "version": "${version}",
+  "name": "Rideable Sulfur Cube",
+  "description": "Tame, pet, and ride Sulfur Cubes while preserving their native archetype hopping physics.",
+  "authors": [
+    "QuantumCreeper",
+    "MrMK",
+    "Aevora Labs"
+  ],
+  "contact": {
+    "homepage": "https://aeonis.prenxy.app",
+    "sources": "https://github.com/TheAevoraLabs/rideable-sulphur-cubes",
+    "issues": "https://github.com/TheAevoraLabs/rideable-sulphur-cubes/issues"
+  },
+  "license": "GPL-3.0-or-later",
+  "icon": "assets/rdsc/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "qc.aeonis.rsc.fabric.RideableSulphurCubesFabric"
+    ]
+  },
+  "mixins": [
+    "rdsc-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": ">=26.3",
+    "java": ">=25"
+  }
+}

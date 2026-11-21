@@ -1,0 +1,51 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.gradle.userdev' version "${neoforge_gradle_version}"
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = "${mod_id}-neoforge"
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(25)
+
+dependencies {
+    implementation "net.neoforged:neoforge:${neo_version}"
+    implementation project(":common")
+}
+
+processResources {
+    var replaceProperties = [
+        minecraft_version: minecraft_version,
+        minecraft_version_range: minecraft_version_range,
+        neo_version: neo_version,
+        mod_id: mod_id,
+        mod_name: mod_name,
+        mod_license: mod_license,
+        mod_version: mod_version,
+        mod_authors: mod_authors
+    ]
+    inputs.properties replaceProperties
+
+    filesMatching(['META-INF/neoforge.mods.toml']) {
+        expand replaceProperties
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 25
+}
+
+jar {
+    from project(":common").sourceSets.main.output
+
+    inputs.property "archivesName", project.base.archivesName
+
+    from(rootProject.file("LICENSE")) {
+        rename { "${it}_${inputs.properties.archivesName}" }
+    }
+}

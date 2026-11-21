@@ -1,0 +1,6 @@
+--version
+26.3.0.6-beta
+--assetIndex
+asset-index
+--assetsDir
+/run/media/quantumcreeper/TVPG/gradle-home/caches/minecraft/assets
